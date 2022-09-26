@@ -10,10 +10,12 @@ public class Cidade {
 	private String nome;
 	private Estado estado;
 
+	// Método para capturar o valor
 	public String getNome() {
 		return nome;
 	}
 
+	// Método para atribuir o valor
 	public void setNome(String nome) {
 		this.nome = nome;
 	}

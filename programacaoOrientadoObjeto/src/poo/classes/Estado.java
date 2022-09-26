@@ -5,10 +5,12 @@ public class Estado {
 	private String nome;
 	private String uf;
 
+	// Método para capturar o valor
 	public Estado() {
 		super();
 	}
 	
+	// Método para atribuir o valor
 	public String getNome() {
 		return nome;
 	}
