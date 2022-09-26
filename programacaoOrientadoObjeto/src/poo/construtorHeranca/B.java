@@ -1,4 +1,4 @@
-package poo.exemploConstrutorHeranca;
+package poo.construtorHeranca;
 
 public class B extends A{
 
