@@ -38,6 +38,10 @@ public class Cidade {
 	public String toString() {
 		return "Cidade [nome=" + nome + ", estado=" + estado + "]";
 	}
+	
+	public String toString1() {
+		return "nome=" + getNome() + ", estado=" + getEstado();
+	}
 
 	@Override
 	public int hashCode() {

@@ -38,6 +38,11 @@ public class Estado {
 	public String toString() {
 		return "Estado [nome=" + nome + ", uf=" + uf + "]";
 	}
+	
+	public String toString1() {
+		return "nome=" + getNome() + ", uf=" + getUf();
+	}
+
 
 	@Override
 	public int hashCode() {

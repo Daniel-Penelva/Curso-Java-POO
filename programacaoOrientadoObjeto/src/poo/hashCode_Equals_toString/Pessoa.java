@@ -27,13 +27,13 @@ public class Pessoa {
 		 */
 		setIdade(idade);
 	}
-	
-	//Construtor que recebe o tipo cidade
+
+	// Construtor que recebe o tipo cidade
 	public Pessoa(Cidade cidade) {
 		this.cidade = cidade;
 	}
-	
-	//Construtor que recebe três parametros
+
+	// Construtor que recebe três parametros
 	public Pessoa(String nome, String cpf, String rg) {
 		this.nome = nome;
 		this.cpf = cpf;
@@ -89,11 +89,16 @@ public class Pessoa {
 		}
 	}
 
-	
-	
+	// Por padrao é feito da maneira abaixo, mas você pode alterar usando o getters
+	// Veja o exemplo toString1()
 	@Override
 	public String toString() {
 		return "Pessoa [nome=" + nome + ", cpf=" + cpf + ", rg=" + rg + ", cidade=" + cidade + ", idade=" + idade + "]";
+	}
+
+	public String toString1() {
+		return "Pessoa - nome=" + getNome() + ", cpf=" + getCpf() + ", rg=" + getRg() + ", cidade=" + getCidade()
+				+ ", idade=" + getIdade();
 	}
 
 	@Override
@@ -113,6 +118,5 @@ public class Pessoa {
 		return Objects.equals(cidade, other.cidade) && Objects.equals(cpf, other.cpf) && idade == other.idade
 				&& Objects.equals(nome, other.nome) && Objects.equals(rg, other.rg);
 	}
-	
-	
+
 }

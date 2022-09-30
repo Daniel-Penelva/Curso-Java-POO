@@ -30,6 +30,13 @@ public class Principal {
 		String pessoaToString = p.toString();
 		System.out.println("Imprimindo toString classe Pessoa: " + pessoaToString);
 
+		String pessoaToString1 = p.toString1();
+		System.out.println("Imprimindo toString1 classe Pessoa: " + pessoaToString1);
+
+		
+		String cidadeToString1 = c.toString1();
+		System.out.println("Imprimindo toString1 classe cidade: " + cidadeToString1);
+
 		// Se fizemos como está o codigo abaixo teríamos que fazer uma conversão
 		/*
 		 * Então vc pergunta: Mas o Object não tem uma implementação padrao do método

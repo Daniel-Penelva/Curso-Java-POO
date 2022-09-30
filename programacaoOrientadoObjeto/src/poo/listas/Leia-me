@@ -1,0 +1,8 @@
+-> Pacote do Java
+
+import java.util.List;
+import java.util.array;
+
+-> Lista genérica
+
+List lista = new ArrayList();
