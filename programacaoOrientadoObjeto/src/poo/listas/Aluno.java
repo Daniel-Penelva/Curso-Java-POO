@@ -12,7 +12,8 @@ public class Aluno {
 	private double nota2;
 	private double nota3;
 	private double mediaNota;
-	private boolean situação;
+	private String situacao;
+	
 	List<Disciplina> listaDisciplinas = new ArrayList<Disciplina>();
 
 	public Aluno() {
@@ -80,17 +81,17 @@ public class Aluno {
 		this.mediaNota = mediaNota;
 	}
 
-	public boolean getSituação() {
+	public String getSituacao() {
 
 		double aprovado = this.getMediaNota();
 		if (aprovado >= 7) {
-			return true;
+			return "Aluno Aprovado";
 		}
-		return false;
+		return "Aluno reprovado";
 	}
 
-	public void isSituação(boolean situação) {
-		this.situação = situação;
+	public void setSituacao(String situacao) {
+		this.situacao = situacao;
 	}
 
 	public List<Disciplina> getListaDisciplinas() {
@@ -104,13 +105,13 @@ public class Aluno {
 	@Override
 	public String toString() {
 		return "Aluno [nome=" + nome + ", matricula=" + matricula + ", nota1=" + nota1 + ", nota2=" + nota2 + ", nota3="
-				+ nota3 + ", mediaNota=" + mediaNota + ", situação=" + situação + ", listaDisciplinas="
+				+ nota3 + ", mediaNota=" + mediaNota + ", situação=" + situacao + ", listaDisciplinas="
 				+ listaDisciplinas + "]";
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(listaDisciplinas, matricula, mediaNota, nome, nota1, nota2, nota3, situação);
+		return Objects.hash(listaDisciplinas, matricula, mediaNota, nome, nota1, nota2, nota3, situacao);
 	}
 
 	@Override
@@ -127,7 +128,7 @@ public class Aluno {
 				&& Objects.equals(nome, other.nome)
 				&& Double.doubleToLongBits(nota1) == Double.doubleToLongBits(other.nota1)
 				&& Double.doubleToLongBits(nota2) == Double.doubleToLongBits(other.nota2)
-				&& Double.doubleToLongBits(nota3) == Double.doubleToLongBits(other.nota3) && situação == other.situação;
+				&& Double.doubleToLongBits(nota3) == Double.doubleToLongBits(other.nota3) && situacao == other.situacao;
 	}
 
 }
