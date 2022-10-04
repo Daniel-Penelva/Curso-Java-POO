@@ -114,6 +114,8 @@ public class Aluno {
 		return Objects.hash(listaDisciplinas, matricula, mediaNota, nome, nota1, nota2, nota3, situacao);
 	}
 
+	
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)

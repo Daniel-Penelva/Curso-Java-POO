@@ -52,7 +52,14 @@ public class Principal3 {
 
 				String removerDisciplina = JOptionPane
 						.showInputDialog("Entre com o indice da disciplina que queira excluir: ");
-				aluno.getListaDisciplinas().remove(Integer.valueOf(removerDisciplina).intValue());
+
+				//Vai filtrar caso o usuario entre com um indice que não existe.
+				try {
+					aluno.getListaDisciplinas().remove(Integer.valueOf(removerDisciplina).intValue());
+				} catch (IndexOutOfBoundsException e) {
+					JOptionPane.showMessageDialog(null,
+							"O índice informado não existe! Favor entre com o índice correto!");
+				}
 
 				// Para conferir se a lista está vazia
 				if (aluno.listaDisciplinas.size() != 0) {
