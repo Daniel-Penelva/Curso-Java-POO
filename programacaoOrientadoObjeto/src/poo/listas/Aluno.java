@@ -85,9 +85,9 @@ public class Aluno {
 
 		double aprovado = this.getMediaNota();
 		if (aprovado >= 7) {
-			return "Aluno Aprovado";
+			return SituacaoAluno.APROVADO;
 		}
-		return "Aluno reprovado";
+		return SituacaoAluno.REPROVADO;
 	}
 
 	public void setSituacao(String situacao) {

@@ -90,7 +90,6 @@ public class Principal5 {
 			listaAlunos.add(aluno);
 		} // fim do for
 
-		
 		// Encontrar aluno
 		String encontrarAluno = JOptionPane.showInputDialog("Entre com o aluno que deseja encontrar?");
 		for (Aluno aluno1 : listaAlunos) {
@@ -105,7 +104,6 @@ public class Principal5 {
 			}
 		}
 
-		
 		// Remover aluno
 		String removerAluno = JOptionPane.showInputDialog("Entre com o aluno que deseja remover? ");
 		for (Aluno aluno1 : listaAlunos) {
@@ -117,15 +115,58 @@ public class Principal5 {
 				break;
 			}
 		}
-		
-		
-		//Para saber a posição da lista
-		for(int pos=0; pos < listaAlunos.size(); pos++) {
-			
+
+		// Para saber a posição da lista
+		for (int pos = 0; pos < listaAlunos.size(); pos++) {
+
 			Aluno aluno = listaAlunos.get(pos);
 			JOptionPane.showMessageDialog(null, "Posição: " + pos + " - Aluno: " + aluno.getNome());
 		}
 
-	}
+		
+		// Para substituir um aluno por outro na lista
+		// OBS. A disciplina também será substituida, pq faz associação com o aluno.
+		// Para fazer substituição de objeto é preciso instanciar um novo objeto.
 
+		String substituirAluno = JOptionPane.showInputDialog("Entre com o aluno que deseja substituir? ");
+		for (int pos=0; pos < listaAlunos.size(); pos++) {
+			
+			Aluno posicao = listaAlunos.get(pos);
+			
+			if (substituirAluno.equals(listaAlunos)) {
+				
+				String subtituirAluno = JOptionPane.showInputDialog("Aluno encontrado - Entre com o novo aluno?");
+				Aluno trocar = new Aluno();
+				trocar.setNome(subtituirAluno);
+
+				for (int x = 1; x <= 3; x++) {
+
+					Disciplina disciplina = new Disciplina();
+
+					String materia = JOptionPane.showInputDialog("Digite a matéria " + x + " ? ");
+					disciplina.setMateria(materia);
+
+					String notaMateria = JOptionPane.showInputDialog("Digite a nota total do aluno" + x + " ? ");
+					disciplina.setNota(Double.valueOf(notaMateria));
+
+					trocar.getListaDisciplinas().add(disciplina);
+				}
+				
+				//trocar o aluno
+				listaAlunos.set(pos, trocar);
+				posicao = listaAlunos.get(pos);
+				break;
+				
+			} else {
+				JOptionPane.showMessageDialog(null, "Aluno não encontrado para substituir!");
+				break;
+			}
+		} // fim do for
+
+		// Para saber se a lista foi substituida
+		for (Aluno aluno : listaAlunos) {
+			JOptionPane.showMessageDialog(null, "Alunos: " + aluno.getNome());
+		}
+		
+	}
 }
