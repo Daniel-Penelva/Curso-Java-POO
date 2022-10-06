@@ -1,11 +1,12 @@
 package poo.listas;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.swing.JOptionPane;
 
-public class Principal5 {
+public class Principal7 {
 
 	public static void main(String[] args) {
 
@@ -13,6 +14,10 @@ public class Principal5 {
 
 		// Lista de alunos
 		List<Aluno> listaAlunos = new ArrayList<Aluno>();
+
+		//Hash Map
+		/*Uma lista que dentro dela tem uma chave que identifica uma sequência de valores*/
+		HashMap<String, List<Aluno>> maps = new HashMap<String, List<Aluno>>();
 
 		for (int qtd = 0; qtd <= 1; qtd++) {
 
@@ -123,51 +128,69 @@ public class Principal5 {
 			JOptionPane.showMessageDialog(null, "Posição: " + pos + " - Aluno: " + aluno.getNome());
 		}
 
-	/*	
-		// Para substituir um aluno por outro na lista
-		// OBS. A disciplina também será substituida, pq faz associação com o aluno.
-		// Para fazer substituição de objeto é preciso instanciar um novo objeto.
-
-		String substituirAluno = JOptionPane.showInputDialog("Entre com o aluno que deseja substituir? ");
-		for (int pos=0; pos < listaAlunos.size(); pos++) {
-			
-			Aluno posicao = listaAlunos.get(pos);
-			
-			if (substituirAluno.equals(listaAlunos)) {
-				
-				String subtituirAluno = JOptionPane.showInputDialog("Aluno encontrado - Entre com o novo aluno?");
-				Aluno trocar = new Aluno();
-				trocar.setNome(subtituirAluno);
-
-				for (int x = 1; x <= 3; x++) {
-
-					Disciplina disciplina = new Disciplina();
-
-					String materia = JOptionPane.showInputDialog("Digite a matéria " + x + " ? ");
-					disciplina.setMateria(materia);
-
-					String notaMateria = JOptionPane.showInputDialog("Digite a nota total do aluno" + x + " ? ");
-					disciplina.setNota(Double.valueOf(notaMateria));
-
-					trocar.getListaDisciplinas().add(disciplina);
-				}
-				
-				//trocar o aluno
-				listaAlunos.set(pos, trocar);
-				posicao = listaAlunos.get(pos);
-				break;
-				
-			} else {
-				JOptionPane.showMessageDialog(null, "Aluno não encontrado para substituir!");
-				break;
-			}
-		} // fim do for
-	*/
-
-		// Para saber se a lista foi substituida
-		for (Aluno aluno : listaAlunos) {
-			JOptionPane.showMessageDialog(null, "Alunos: " + aluno.getNome());
-		}
+		/*
+		 * // Para substituir um aluno por outro na lista // OBS. A disciplina também
+		 * será substituida, pq faz associação com o aluno. // Para fazer substituição
+		 * de objeto é preciso instanciar um novo objeto.
+		 * 
+		 * String substituirAluno =
+		 * JOptionPane.showInputDialog("Entre com o aluno que deseja substituir? "); for
+		 * (int pos=0; pos < listaAlunos.size(); pos++) {
+		 * 
+		 * Aluno posicao = listaAlunos.get(pos);
+		 * 
+		 * if (substituirAluno.equals(listaAlunos)) {
+		 * 
+		 * String subtituirAluno =
+		 * JOptionPane.showInputDialog("Aluno encontrado - Entre com o novo aluno?");
+		 * Aluno trocar = new Aluno(); trocar.setNome(subtituirAluno);
+		 * 
+		 * for (int x = 1; x <= 3; x++) {
+		 * 
+		 * Disciplina disciplina = new Disciplina();
+		 * 
+		 * String materia = JOptionPane.showInputDialog("Digite a matéria " + x +
+		 * " ? "); disciplina.setMateria(materia);
+		 * 
+		 * String notaMateria =
+		 * JOptionPane.showInputDialog("Digite a nota total do aluno" + x + " ? ");
+		 * disciplina.setNota(Double.valueOf(notaMateria));
+		 * 
+		 * trocar.getListaDisciplinas().add(disciplina); }
+		 * 
+		 * //trocar o aluno listaAlunos.set(pos, trocar); posicao =
+		 * listaAlunos.get(pos); break;
+		 * 
+		 * } else { JOptionPane.showMessageDialog(null,
+		 * "Aluno não encontrado para substituir!"); break; } } // fim do for
+		 */
 		
+
+		//Hash map da situação do aluno - inicializa - seta os valores e cria a lista de aluno
+		maps.put(SituacaoAluno.APROVADO, new ArrayList<Aluno>());
+		maps.put(SituacaoAluno.REPROVADO, new ArrayList<Aluno>());
+		
+		
+		// Lista de aprovados - vai ser adicionado a lista todos os alunos aprovados, o
+		// mesmo para os reprovados
+		for (Aluno aluno : listaAlunos) {
+
+			if (aluno.getSituacao().equals(SituacaoAluno.APROVADO)) {
+				maps.get(SituacaoAluno.APROVADO).add(aluno);
+			} else {
+				maps.get(SituacaoAluno.REPROVADO).add(aluno);
+			}
+		} // fim for
+
+		// Lista dos aprovados
+		for (Aluno aluno : maps.get(SituacaoAluno.APROVADO)) {
+			JOptionPane.showMessageDialog(null, "Nome alunos aprovados: " + aluno.getNome());
+		}
+
+		// Lista dos reprovados
+		for (Aluno aluno : maps.get(SituacaoAluno.REPROVADO)) {
+			JOptionPane.showMessageDialog(null, "Nome alunos Reprovados: " + aluno.getNome());
+		}
+
 	}
 }
