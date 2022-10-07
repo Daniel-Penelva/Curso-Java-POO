@@ -123,7 +123,7 @@ public class Principal5 {
 			JOptionPane.showMessageDialog(null, "Posição: " + pos + " - Aluno: " + aluno.getNome());
 		}
 
-	/*	
+		
 		// Para substituir um aluno por outro na lista
 		// OBS. A disciplina também será substituida, pq faz associação com o aluno.
 		// Para fazer substituição de objeto é preciso instanciar um novo objeto.
@@ -133,7 +133,8 @@ public class Principal5 {
 			
 			Aluno posicao = listaAlunos.get(pos);
 			
-			if (substituirAluno.equals(listaAlunos)) {
+			//compara o aluno de entrada com o aluno na lista
+			if (substituirAluno.equals(posicao.getNome())) {
 				
 				String subtituirAluno = JOptionPane.showInputDialog("Aluno encontrado - Entre com o novo aluno?");
 				Aluno trocar = new Aluno();
@@ -162,7 +163,7 @@ public class Principal5 {
 				break;
 			}
 		} // fim do for
-	*/
+	
 
 		// Para saber se a lista foi substituida
 		for (Aluno aluno : listaAlunos) {
