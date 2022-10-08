@@ -1,4 +1,4 @@
-package poo.exception;
+package poo.projetoException;
 
 public class CnpjInvalidaException extends Exception {
 

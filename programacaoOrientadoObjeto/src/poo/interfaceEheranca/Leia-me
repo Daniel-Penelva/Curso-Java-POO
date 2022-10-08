@@ -1,0 +1,7 @@
+Pergunta:
+
+Existe herança multipla no java?
+
+Não, o java não permite herança multipla, ou seja, não é possivel uma classe java estender mais de uma 
+classe java. Porém, o java permite que interfaces estendam mais de uma interface, ou seja, existe herança 
+multipla de interface no java.

@@ -1,56 +1,41 @@
-Na API do java uma família que forma uma hierarquia de classes com Exceções nativas.
-Na figura abaixo temos um exemplo de como essa é a estrutura dessa herança.
-A classe mais genérica que corresponde a família das Exceptions é Throwable.
-Logo temos Exception e RuntimeException.
-Podemos classificá-las em dois grupos.
 
-1) Grupo das filhas diretamente de Exception (Checked)
-2) Grupo das filhas de RuntimeException (Uncheck) - Os filhos 
 
-           _____________________________
-           | Throwable                 |
-           |---------------------------|
-           | printStackTrace() : void  |
-           | getMessage() : String     |
-           | getCause() : Throwable    |
-           |----------------------------
-                       ^
-                       |
-                       |
-                 _______________      
-                |  Exception    |
-                 ---------------  <-------------------|
-                 ^           ^                        |
-        _________|_    ______|______________   _______|__________    
-       |IDException|   |DataFormatException|  |RuntimeException|
-       -------------   --------------------    -----------------   
-                                                  ^          ^
-                                                  |          |
-                              ____________________|_____   __|__________________
-                             |IndexOutOfBoundsException|  |NullPointerException|
-                              --------------------------  ----------------------
-
-Importante:
-Essas classe são básicas e são lançadas pela JVM como IndexOutOfBoundsException, NullPointerException, e 
-entre outras.
-Os filhos de RuntimeException são livres de tratamento, ou seja, vc não precisa tratá-las, a própria JVM
-faz isso pra vc.
-
-Importante:
-Existe duas maneiras de usar o Exception:
--> O comando throw lança programaticamente a exception
--> O comando try() catch(Exception e) pode lançar e capturar essa exceção
-   
    try{
-      
+       //bloco que é monitorado para erros - usado para executar o código 
+      } catch(TipoDaException exception){
+       //tratamento de erro - captura a exceção
       }
-     catch(Exception e)
-      {
-         aqui que vou manipular com tratamento de exceção
-      }  
+      
+      
+    try{
+       //bloco que é monitorado para erros
+      } catch(TipoDaException exception){
+       //tratamento de erro
+      } catch(TipoDaException exception){
+       //tratamento de erro2 
+      }
 
-É possivel criar uma nova exceção, se optar em fazer isso, é possível que o método manipule de duas maneiras:
-1) O método pode ser feito para ser RELANÇADA a exceção, ou seja, declarando que vai ser relançada a exceção
-(declaração com throws).
 
-2) O método pode TRATAR essa exceção (try{}catch(Exception e){}).
+Capturando exception Generico usa-se o: Throwable
+
+
+      try{
+       //bloco que é monitorado para erros
+      } catch(TipoDaException exception){
+       //tratamento de erro
+      } catch(TipoDaException exception){
+       //tratamento de erro2 
+      }finally{
+        //executado após o try ou catch
+      }
+      
+      Na seguinte ordem:
+       1.Abrir arquivo
+       2. Realiza leitura
+       3. Ocorre um erro
+       4.Fecha arquivo no finally  - sempre será executado.
+
+ 
+Código: System.exit(0);
+Ao terminar a execução do programa dentro do try ou do catch, finally NÃO é executado!
+  

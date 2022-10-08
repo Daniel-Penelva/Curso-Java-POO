@@ -1,5 +1,6 @@
 package poo.classeAbstrata;
 
+//Pessoa fisica é um funcionário
 public abstract class Funcionario extends PessoaFisica {
 
 	/*

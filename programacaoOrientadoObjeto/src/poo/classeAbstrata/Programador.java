@@ -1,5 +1,6 @@
 package poo.classeAbstrata;
 
+//Programador é um funcionario
 public class Programador extends Funcionario {
 
 	public Programador() {

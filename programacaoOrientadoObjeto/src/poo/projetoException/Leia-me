@@ -1,0 +1,56 @@
+Na API do java uma família que forma uma hierarquia de classes com Exceções nativas.
+Na figura abaixo temos um exemplo de como essa é a estrutura dessa herança.
+A classe mais genérica que corresponde a família das Exceptions é Throwable.
+Logo temos Exception e RuntimeException.
+Podemos classificá-las em dois grupos.
+
+1) Grupo das filhas diretamente de Exception (Checked)
+2) Grupo das filhas de RuntimeException (Uncheck) - Os filhos 
+
+           _____________________________
+           | Throwable                 |
+           |---------------------------|
+           | printStackTrace() : void  |
+           | getMessage() : String     |
+           | getCause() : Throwable    |
+           |----------------------------
+                       ^
+                       |
+                       |
+                 _______________      
+                |  Exception    |
+                 ---------------  <-------------------|
+                 ^           ^                        |
+        _________|_    ______|______________   _______|__________    
+       |IDException|   |DataFormatException|  |RuntimeException|
+       -------------   --------------------    -----------------   
+                                                  ^          ^
+                                                  |          |
+                              ____________________|_____   __|__________________
+                             |IndexOutOfBoundsException|  |NullPointerException|
+                              --------------------------  ----------------------
+
+Importante:
+Essas classe são básicas e são lançadas pela JVM como IndexOutOfBoundsException, NullPointerException, e 
+entre outras.
+Os filhos de RuntimeException são livres de tratamento, ou seja, vc não precisa tratá-las, a própria JVM
+faz isso pra vc.
+
+Importante:
+Existe duas maneiras de usar o Exception:
+-> O comando throw lança programaticamente a exception
+-> O comando try() catch(Exception e) pode lançar e capturar essa exceção
+   
+   try{
+      
+      }
+     catch(Exception e)
+      {
+         aqui que vou manipular com tratamento de exceção
+      }  
+
+É possivel criar uma nova exceção, se optar em fazer isso, é possível que o método manipule de duas maneiras:
+1) O método pode ser feito para ser RELANÇADA a exceção, ou seja, declarando que vai ser relançada a exceção
+(declaração com throws).
+
+2) O método pode TRATAR essa exceção (try{}catch(Exception e){}).

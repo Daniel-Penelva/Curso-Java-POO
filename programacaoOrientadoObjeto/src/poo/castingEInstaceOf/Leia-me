@@ -1,0 +1,25 @@
+
+Conversão de Obejtos (Casting)
+
+ . Converter uma subclasse para o tipo superclasse ou vice-versa.
+    --> Upcasting e Downcasting
+    
+    Exemplo de Upcasting:
+    
+    Aluno aluno = new Aluno();   ou  Aluno aluno = new Aluno();
+    Object pessoa = aluno;           Pessoa alunoPessoa = aluno;
+    
+              Object                      Upcasting
+                |                             ^
+                |                             |
+                |                             |
+              Pessoa                          |
+       _________|__________                   |
+      |                    |                  v
+   Aluno                Professor         Downcasting    
+   
+   
+ InstaceOf verifica qual classe é a instancia daquele objeto
+   
+   
+   

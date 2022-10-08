@@ -1,5 +1,6 @@
 package poo.classeAbstrata;
 
+//Analista é um funcionario
 public class Analista extends Funcionario {
 
 	// Construtor
