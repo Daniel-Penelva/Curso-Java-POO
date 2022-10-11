@@ -3,7 +3,7 @@ package poo.exception;
 public class MultiplosCatchSimilares {
 
 	public static void main(String[] args) {
-
+		// Teremos erros do tamanho do array, por divisao por zero
 		int[] numeros = { 4, 8, 16, 32, 64, 128};
 		int[] denominador = { 2, 0, 4, 8, 0};
 

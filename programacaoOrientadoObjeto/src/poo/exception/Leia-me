@@ -1,4 +1,8 @@
+Error - resulta na finalização do programa.
 
+Exception - possível tratar o erro e continuar a execução do programa.
+
+-------------------
 
    try{
        //bloco que é monitorado para erros - usado para executar o código 
@@ -6,7 +10,8 @@
        //tratamento de erro - captura a exceção
       }
       
-      
+-------------------
+   
     try{
        //bloco que é monitorado para erros
       } catch(TipoDaException exception){
@@ -15,9 +20,15 @@
        //tratamento de erro2 
       }
 
+-------------------
 
 Capturando exception Generico usa-se o: Throwable
+É a classe mãe de todas as excetions - possui métodos úteis.
+São eles:
+          .getMessage() - retorna a descrição do erro.
+          .printStackTrace() - imprime o stack trace do erro.
 
+-------------------
 
       try{
        //bloco que é monitorado para erros
@@ -35,7 +46,49 @@ Capturando exception Generico usa-se o: Throwable
        3. Ocorre um erro
        4.Fecha arquivo no finally  - sempre será executado.
 
+-------------------
  
 Código: System.exit(0);
 Ao terminar a execução do programa dentro do try ou do catch, finally NÃO é executado!
+
+-------------------
+
+throws
+
+Métdo para disparar uma exception;
+Passa a responsabilidade para quem for utilizar o método;
+Exceptions disparadas em tempo de execução (ArrayOutofBounds, Arithmetic), não necessitam de throws explicitamente.
+
+-------------------
+OBS. Veja a imagem
+
+Nas Exceptions existem dois tipos. Sao elas:
+ . checked - São as verificadas (ex: IOException, ocorre em acesso em arquivos, leitura ou escrita de arquivos), 
+             a propria IDE reclama essas exceções.
+ 
+ .unchecked - as não verificadas, são aquelas que acontecem em tempo de execução do programa (ex: 
+             NullPoinException que ocorre quando uma variavel que não foi instanciada, ou seja, aponta 
+             para uma variavel ou referencia nula) e não tem como você prevê, logo, o que pode ser feito é colocar o 
+             codigo dentro do try..catch e tentar capturar a exception para tratá-la.
+             
+Algumas Exceções:
+ 1. NullPointerException
+    Existe uma variável ou referencia nula.
+    
+ 2. NumberFormatException
+    Tentando converter uma String em um número mas a String está vazia.
+    
+ 3. FileNotFoundException
+    Tentando carregar um arquivo mas não foi encontrado no caminho informado.
+    
+ 4. ClassCastException
+    Tentando converter um objeto B para A sendo que não sao do mesmo tipo ou sem relação.
+    
+ 5. ClassNotFoundException
+    Tenta carregar uma classe sendo que não foi encontrada.
+ 
+ 
+ 
+ 
+ 
   
