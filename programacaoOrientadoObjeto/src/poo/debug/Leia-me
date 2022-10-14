@@ -4,4 +4,4 @@ F6 - Segue linha a linha.
 F5 - Entra nos métodos.
 F7 - Saí de dentro do método atual
 F8 - Segue para o proximo ponto de parada.
-CTRL + SHIFT + I - valor da expressão ou variável
+sublinhar selecionando o codigo e apertar CTRL + SHIFT + I - valor da expressão ou variável
