@@ -1,4 +1,4 @@
-package poo.arrayEMatrizes;
+package poo.array;
 
 public class Principal2 {
 

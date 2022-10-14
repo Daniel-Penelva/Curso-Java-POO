@@ -1,0 +1,86 @@
+Matriz
+
+Como armazenar 4 notas para 10 alunos? 
+Não seria aconselhavel armazenar um vetor de quatro posições para cada aluno adicionar as notas. Por exemplo:
+         double[] aluno1 = new double[4];
+         double[] aluno2 = new double[4];
+         double[] aluno3 = new double[4];
+         ...
+
+O mais aconselhavel seria fazer uma matriz da seguinte forma:
+           
+                 Notas                              
+           |  A | B | C | D |           OBS. aluno = linha ----->
+         1 |    |   |   |   |                               ^
+ aluno   2 |    |   |   |   |                               |
+         3 |    |   |   |   |                notas = coluna |
+      (...)         
+ 
+ 
+ aluno x notas                M[aluno][notas] = M[linha][coluna]
+ 
+ [0][0] [0][1] [0][2] [0][3]
+ [1][0] [1][1] [1][2] [1][3]
+ [2][0] [2][1] [2][2] [2][3]
+          (...)
+ 
+ 
+ Portanto, podemos:
+ 
+       double[][] notasAlunos = new double[10][4];
+       
+       notasAlunos[0][0] = 10;
+       notasAlunos[0][1] = 5;
+       notasAlunos[0][2] = 7.8;
+       notasAlunos[0][3] = 6.8;
+       
+       notasAlunos[1][0] = 3.4;
+       notasAlunos[1][1] = 5.8;
+       notasAlunos[1][2] = 9.8;
+       notasAlunos[1][3] = 5.8;
+       
+       notasAlunos[2][0] = 3;
+       notasAlunos[2][1] = 4;
+       notasAlunos[2][2] = 9;
+       notasAlunos[2][3] = 6;
+       
+       notasAlunos[3][0] = 7.4;
+       notasAlunos[3][1] = 8;
+       notasAlunos[3][2] = 8;
+       notasAlunos[3][3] = 2;
+       
+       
+      [0]  [1]  [2]  [3]
+ [0]   10   5   7.8  6.8
+ [1]  3.4  5.8  9.8  5.8
+ [2]   3    4    9    6
+ [3]  7.4   8    8    2 
+            
+          (...)
+          
+================================================
+
+Array Multidimensional - pense num cubo - usado muito para programar jogos
+
+                                             z
+                                             ^
+                                             |
+                                             |
+matriz[z][y][x]                  x <---------|---------> z
+
+matriz[linha][coluna][profundidade]
+
+
+=================================================
+
+Arrays irregulares
+
+int[][] arrayIrregular = new int[3][];
+
+arrayIrregular[0] = new int[1];
+arrayIrregular[1] = new int[2];
+arrayIrregular[2] = new int[3];
+
+
+ 
+ 

@@ -1,4 +1,4 @@
-package poo.arrayEMatrizes;
+package poo.array;
 
 import java.util.Arrays;
 import java.util.Objects;

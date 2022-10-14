@@ -1,4 +1,4 @@
-package poo.arrayEMatrizes;
+package poo.array;
 
 import javax.swing.JOptionPane;
 

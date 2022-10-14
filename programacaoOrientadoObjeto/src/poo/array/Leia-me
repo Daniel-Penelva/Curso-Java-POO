@@ -4,3 +4,8 @@ inicializado. Ou seja, array é um conjunto de dados do mesmo tipo.
 
 Um ArrayList é uma implementação da interface List. A List é uma lista de dados e é dinâmica. A diferença aqui é
 que vc pode ter em uma lista elementos diferentes… e nao do mesmo tipo. 
+
+
+
+
+ 
