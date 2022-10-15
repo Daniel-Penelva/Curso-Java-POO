@@ -1,0 +1,47 @@
+Objetivos das threads são processamentos paralelos de dados e liberar o usuário para confirmar sua tarefa.
+
+Threads (Multi-threads) são linhas de execução separadas.
+
+O uso das thread entra em ação quando precisamos ler informação do forma visível, notificar o usuário, quando
+temos um processo lento e demorado ou quando precisamos de vários processos executando ao mesmo tempo.
+
+As threads estão presentes em nossa vida a todo momento, por exemplo, vários aplicativos no smartphone mostrando
+notificação de e-mails, mensagens, navegador com várias abas, você escutando música e ao mesmo tempo navegando 
+na internet, consultar um webservice, integração de dados/processos de seu computador rodando de forma oculta
+e mais centenas de exemplos.
+
+Os computadores realizam operações paralelamente e/ou concorrentemente - vejamos:
+ . Paralelamente - tarefas são executadas simultaneamente.
+ . Concorrentemente - tarefas disputam o mesmo recurso - pode criar várias Threads (Multi-thread)
+
+Existe duas maneiras de criar Thread:
+ 1. Extender a classe Thread
+    Quando fazemos o extends da Thread, o único método que precisa ser sobreposto é o run.
+ 
+ 2. Implementar interface Runnable
+    Quando implementamos o Runnable, também precisamos implementar o método run.
+    Com a classe Runnable, podemos extender qualquer outra classe.
+    Se não for sobrepor qualquer outro método da classe Thread, pode ser melhor usar o Runnable.
+ 
+ Os métodos mais importantes da Thread:
+  . start - inicia o método run, ou seja, inicia a thread;
+  . run - executa a tarefa da thread;
+  .sleep - coloca a thread para dormir por X milissegundos. 
+ 
+
+Por exemplo:
+                         São 5 Threds com tempo total de 4 minutos
+
+               
+                  Integração de     Envia E-mail      Baixa       Notifica      Gerar log 
+                  Banco de dados       NFC-E         Estoque      Gerente     banco de dados
+                     ^                  ^               ^            ^               ^
+                     |                  |               |            |               |
+                     |                  |               |            |               |        Processo
+                     |                  |               |            |               |        Paralelo
+Usuário faz ---------------------------------------------------------------------------------------->
+   venda           |
+                   v
+                O tempo do usuário que leva 
+                   para concluir a venda
+                      é de 1 minuto
