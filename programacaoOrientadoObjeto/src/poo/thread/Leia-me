@@ -27,7 +27,59 @@ Existe duas maneiras de criar Thread:
   . start - inicia o método run, ou seja, inicia a thread;
   . run - executa a tarefa da thread;
   .sleep - coloca a thread para dormir por X milissegundos. 
+  
+  
+ OBS. 
+ Sincronização é o ato de coordenar as atividades de 2 ou mais threads.
  
+ Motivo: Quando 2 ou mais threads precisam acessar um recurso compartilhado, ou somente 1 thread pode 
+ acessar o recurso por vez.
+ 
+ No java usa-se a palavra chave "synchronized" em métodos (assinatura) ou em bloco de código.
+ 
+ 
+OBS. 
+Uma thread A está sendo executada dentro de um método sincronizado e precisa de acesso a um recurso R
+que no momento está indisponível.
+ 
+Se a thread A ficar esperando por R, irá bloquear o objeto impedindo que outras threads acessem o mesmo.
+
+Neste caso a melhor solução para não causar problemas é liberar temporariamente o controle do objeto
+permitindo que outra thread seja executada.
+
+O "wait" bloqueia a execução da thread temporariamento, ou seja, coloca o thread em modo de espera. A thread
+fica em modo de espera até que seja notificada.
+
+O "notify" notifica uma thread que estava esperando, ou seja, retorna a execução de thread.
+
+O "notifyAll" noticia todas as threads e a que tem prioridade mais alta ganha acesso ao objeto.
+
+
+OBS. 
+Pode ser útil suspender thread. Por exemplo, uma thread que mostra o horário do dia. Pode-se suspender
+e posteriormente resumir a execução.
+
+Até o java 2 existiam os métodos suspend, resume e stop.
+
+Vale ressaltar que o método "suspend" foi substituido no java 2 por causar problema de deadlock. 
+E como o método resume não funciona sem o método suspend, também foi removido. 
+
+O método stop também foi substituído no java 2 (deve-se usar o método interrupt no lugar).
+
+O método suspend é para suspender temporariamente a execução da Thread.
+
+O método resume é para resumir a execução da thread.
+
+O método stop é para terminar a execução da thread.
+
+
+OBS. 
+
+Deadlocks é uma situação em que ocorre um impasse, e dois ou mais processos ficam impedidos de continuar 
+suas execuções - ou seja, ficam bloqueados, esperando uns pelos outros. 
+
+Para não ocorrer o deadlock ao usar o synchronized é sempre bom usar métodos como o do wait() e notify().
+====================================
 
 Por exemplo:
                          São 5 Threds com tempo total de 4 minutos
