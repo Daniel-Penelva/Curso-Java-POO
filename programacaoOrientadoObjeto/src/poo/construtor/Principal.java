@@ -35,8 +35,8 @@ public class Principal {
 		System.out.println("\n");
 		
 		// Chamando 4º construtor
-		Pessoa p3 = new Pessoa("Daniel", "11111111111", "1111111-1");
-		System.out.println("Nome: " + p1.getNome() + " CPF: " + p1.getCpf() + " RG: " + p1.getRg() + "1111111-1");
+		Pessoa p3 = new Pessoa("Pedro", "22222222222", "3333333-3");
+		System.out.println("Nome: " + p3.getNome() + " CPF: " + p3.getCpf() + " RG: " + p3.getRg() + "1111111-1");
 	}
 
 }

@@ -1,0 +1,10 @@
+
+Enums extends a classe java.lang.Enum
+
+Podem ser comparados usando ==
+
+Não podem ser instanciados com o new
+
+Podem implementar interfaces.
+
+Pode ser declarado separadamente ou dentro da classe.

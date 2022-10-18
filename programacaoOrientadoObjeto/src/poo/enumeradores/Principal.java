@@ -12,6 +12,7 @@ public class Principal {
 
 	}
 
+	//Instanciando a palavra chave final e imprimindo no main
 	private static void usandoConstantes() {
 		int segunda = DiaSemanaConstantes.SEGUNDA;
 		int terca = DiaSemanaConstantes.TERCA;
@@ -64,7 +65,7 @@ public class Principal {
 		}
 	}
 
-	// Instanciando os enumeradores
+	// Instanciando os enumeradores e imprimindo no main
 	private static void usandoEnum() {
 		DiaSemana segunda = DiaSemana.SEGUNDA;
 		DiaSemana terca = DiaSemana.TERCA;
