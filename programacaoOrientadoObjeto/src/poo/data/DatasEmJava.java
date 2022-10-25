@@ -1,8 +1,12 @@
 package poo.data;
 
+import java.time.Duration;
+import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
 
@@ -10,7 +14,7 @@ public class DatasEmJava {
 
 	public static void main(String[] args) {
 
-		// data dd MM yyyy
+		// data (yyyy - MM - dd)
 		LocalDate agora = LocalDate.now();
 		System.out.println("Data: " + agora);
 
@@ -26,7 +30,9 @@ public class DatasEmJava {
 		// Mostra o dia da semana de hoje, do mês e do ano
 		System.out.println("Dia da semana de hoje: " + agora.getDayOfWeek());
 		System.out.println("Mostra o mês de hoje: " + agora.getDayOfMonth());
+		System.out.println("Mostra o mês de hoje: " + agora.getMonth());
 		System.out.println("Mostra o ano de hoje: " + agora.getDayOfYear());
+		System.out.println("Mostra o ano de hoje: " + agora.getYear());
 
 		// Verifica se é um ano bisiestos - retorna um boolean
 		System.out.println("É ano bisiesto: " + agora.isLeapYear());
@@ -54,6 +60,19 @@ public class DatasEmJava {
 		System.out.println(LocalDate.of(2022, 10, 3));
 		System.out.println(LocalDate.parse("2022-12-10"));
 		
+		LocalDate dataAntiga = LocalDate.of(2020, 11, 25);
+		LocalDate dataNova = LocalDate.of(2022, 10, 5);
+		
+		// retorna um bollean os métodos isAfter, isBefore, equals
+		System.out.println("Data antiga é maior que a data nova: " + dataAntiga.isAfter(dataNova));
+		System.out.println("Data antiga é anterior a nova: " + dataAntiga.isAfter(dataNova));
+		System.out.println("Datas são iguais: " + dataAntiga.equals(dataNova));
+		
+		Period periodo = Period.between(dataAntiga, dataNova);
+		System.out.println("Periodo de quantos dias entre a data antiga e a nova: " + periodo.getDays());
+		System.out.println("Periodo de quantos meses entre a data antiga e a nova: " + periodo.getMonths());
+		System.out.println("Periodo de quantos anos entre a data antiga e a nova: " + periodo.getYears());
+			
 		//Data completa = data + hora
 		LocalDateTime dataHoraAgora = LocalDateTime.now();
 		System.out.println("Data Completa: " + dataHoraAgora);
@@ -63,6 +82,30 @@ public class DatasEmJava {
 		
 		//convertendo - está em formato iso
 		System.out.println(LocalDateTime.parse("2022-10-18T09:35"));
+		
+		// formatação de data
+		LocalDateTime dataEHoraAtual = LocalDateTime.now();
+		System.out.println("Data e Hora atual: " + dataEHoraAtual.format(DateTimeFormatter.BASIC_ISO_DATE));
+		System.out.println("Data e Hora atual: " + dataEHoraAtual.format(DateTimeFormatter.ISO_DATE));
+		System.out.println("Data e Hora atual: " + dataEHoraAtual.format(DateTimeFormatter.ISO_LOCAL_DATE));
+		System.out.println("Data e Hora atual: " + dataEHoraAtual.format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss")));
+		
+		// Classe Instant
+		Instant inicio = Instant.now();
+		
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
+		Instant ifinal = Instant.now();
+		
+		Duration duracao = Duration.between(inicio, ifinal);
+		
+		System.out.println("Duração em nano segundos: " + duracao.toNanos());
+		System.out.println("Duração em segundos segundos: " + duracao.toSeconds());
+		System.out.println("Duração em minutos segundos: " + duracao.toMinutes());
 
 	}
 

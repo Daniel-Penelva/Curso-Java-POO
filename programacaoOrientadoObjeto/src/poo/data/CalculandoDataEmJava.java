@@ -7,12 +7,13 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.Period;
 import java.time.temporal.ChronoUnit;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 public class CalculandoDataEmJava {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ParseException {
 
 		try {
 			diferencaData();
@@ -31,6 +32,23 @@ public class CalculandoDataEmJava {
 		System.out.println(" -------------------------------------- ");
 
 		diferencaDataComChronoUnit();
+
+		System.out.println(" -------------------------------------- ");
+
+		Calendar calendario = Calendar.getInstance();
+		calendario.setTime(new SimpleDateFormat("dd/MM/yyyy").parse("10/03/2021"));
+
+		calendario.add(Calendar.DAY_OF_MONTH, -5);
+		System.out.println("Diminui 5 dias no mês: " + new SimpleDateFormat("dd/MM/yyyy").format(calendario.getTime()));
+
+		calendario.add(Calendar.DAY_OF_WEEK, 10);
+		System.out.println("Soma 10 dias: " + new SimpleDateFormat("dd/MM/yyyy").format(calendario.getTime()));
+
+		calendario.add(Calendar.MONTH, 1);
+		System.out.println("Soma um mês: " + new SimpleDateFormat("dd/MM/yyyy").format(calendario.getTime()));
+
+		calendario.add(Calendar.YEAR, 1);
+		System.out.println("Soma um ano: " + new SimpleDateFormat("dd/MM/yyyy").format(calendario.getTime()));
 
 	}
 
