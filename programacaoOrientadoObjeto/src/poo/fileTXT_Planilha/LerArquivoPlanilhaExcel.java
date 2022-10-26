@@ -1,17 +1,17 @@
-package poo.fileTXT;
+package poo.fileTXT_Planilha;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class LerArquivoTxt {
+public class LerArquivoPlanilhaExcel {
 
 	public static void main(String[] args) throws FileNotFoundException {
 
 		// Arquivo de entrada de dados
 		FileInputStream entradaDeDados = new FileInputStream(new File(
-				"C:\\Users\\d4nan\\git\\repository2\\programacaoOrientadoObjeto\\src\\poo\\fileTXT\\arquivo.txt"));
+				"C:\\Users\\d4nan\\git\\repository2\\programacaoOrientadoObjeto\\src\\poo\\fileTXT\\arquivoExcel.csv"));
 
 		Scanner lerArquivo = new Scanner(entradaDeDados, "UTF-8");
 

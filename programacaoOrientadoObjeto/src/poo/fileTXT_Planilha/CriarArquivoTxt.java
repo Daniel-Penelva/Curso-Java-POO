@@ -1,4 +1,4 @@
-package poo.fileTXT;
+package poo.fileTXT_Planilha;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Arquivos {
+public class CriarArquivoTxt {
 
 	public static void main(String[] args) throws IOException {
 
