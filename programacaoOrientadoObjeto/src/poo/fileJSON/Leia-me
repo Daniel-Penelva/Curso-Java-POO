@@ -1,0 +1,74 @@
+
+O formato JSON é utilizado para estruturar dados em formato de texto e permitir a troca de dados entre 
+aplicações de forma simples, leve e rápida. Por isso é tão importante saber como é estruturado e as 
+principais diferenças com o modelo XML.
+
+JSON, que significa JavaScript Object Notation, é uma formatação utilizada para estruturar dados em formato 
+de texto e transmiti-los de um sistema para outro, como em aplicações cliente-servidor ou em aplicativos móveis.
+
+Na prática, .json é um arquivo que contém uma série de dados estruturados em formato texto e é utilizado para
+transferir informações entre sistemas.
+
+Os dados contidos em um arquivo no formato JSON devem ser estruturados por meio de uma coleção de pares com 
+nome e valor ou ser uma lista ordenada de valores. Seus elementos devem conter:
+
+  -> chave: corresponde ao identificador do conteúdo. Por isso, deve ser uma string delimitada por aspas;
+
+  -> valor: representa o conteúdo correspondente e pode conter os seguintes tipos de dados: string, array, 
+            object, number, boolean ou null.  
+
+JSON são dados estruturados de um objeto e esses dados sao controlados por um texto, onde identificam 
+a estrutura padrao, contendo os atributos, métodos, listas e etc.
+
+Os arquivos no formato .json contêm algumas características específicas que tornam essa especificação mais 
+atraente para a utilização em aplicações que consomem dados de outros sistemas. 
+
+
+Outro formato utilizado para a troca de dados entre aplicações é o XML — eXtensible Markup Language. Apesar 
+de também ser um arquivo de texto, existem algumas diferenças entre os dois modelos. Confira as principais.
+
+A primeira diferença entre os dois modelos é a forma de fazer a notação dos dados. Conforme mencionamos, 
+o JSON utiliza uma notação simples, enquanto o XML utiliza uma estrutura de tags personalizadas para 
+representar os objetos. Além disso, elas devem conter o par, ou seja, a tag de abertura e a de fechamento.
+
+Outra característica da notação XML é que o seu conteúdo não precisa ser delimitado com aspas, como acontece 
+com os textos no formato JSON. 
+
+Veja, a seguir, alguns exemplos de como os dados devem ser relacionados em um arquivo .json.
+
+String
+{ "estado": "São Paulo"}
+
+
+Array
+{
+    "estados": ["São Paulo", "Minas Gerais", "Rio de Janeiro"]
+}
+
+
+Objeto 
+{ "estado": {
+       "estado": "São Paulo",
+       "sigla": "SP"
+  }
+}
+
+
+Lista de objetos
+Confira como fazer a notação para indicar uma lista de objetos:
+
+{   "estados":[
+    {"estado": "São Paulo", "sigla": "SP"},
+    {"estado": "Minas Gerais", "sigla": "MG"},
+    {"estado": "Rio de Janeiro", "sigla": "RJ"}
+    ]
+}
+
+
+IMPORTANTE: Vamos utilizar a biblioteca do JSON (Pesquisar por google json maven)
+link: https://mvnrepository.com/artifact/com.google.code.gson/gson
+
+
+
+
+
