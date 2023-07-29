@@ -1,0 +1,29 @@
+
+
+    ----------------------------                        --------------------------
+   |          Pessoa           |                        |         Projeto         |
+   |---------------------------|                        |-------------------------|
+   | - id: Long                | 1..*             1...* | - id: Long              |
+   | - nome: String            | ---------------------- | - nome: String          |
+   | - projetos: List<Projeto> |           |            | - pessoas: List<Pessoa> |
+   ----------------------------            |            ---------------------------
+                                           |
+                                           |
+                               --------------------------        
+                               |      PessoaProjeto      |
+                               |-------------------------|
+                               |                         |
+                               |-------------------------|
+   
+   
+   Uma Pessoa para um ou vários projetos.
+   Um projeto para uma ou várias pessoas.
+   
+   Ou seja, várias pessoas podem ter vários projetos ou
+   vários projetos podem ter várias pessoas.
+   
+   Modelo Conceitual: 
+   
+   Pessoa(id, nome, projetos)
+   Projeto(id, nome, pessoas)
+   PessoaProjeto(pessoa_id, projeto_id)
