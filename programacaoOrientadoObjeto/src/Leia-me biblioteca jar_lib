@@ -1,0 +1,7 @@
+1º Para Add uma biblioteca você baixa o jar no maven.
+
+2º Faz um ctrl+ c (copia) e cola na pasta lib.
+
+3º Com o botão direito em cima do jar vai em Build Path > Add to build Path.
+
+Automaticamente irá criar a biblioteca no 'Referenced Libraries'.

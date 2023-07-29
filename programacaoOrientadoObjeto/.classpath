@@ -10,5 +10,8 @@
 	<classpathentry kind="lib" path="lib/commons-math3-3.6.1.jar"/>
 	<classpathentry kind="lib" path="lib/commons-collections4-4.4.jar"/>
 	<classpathentry kind="lib" path="lib/gson-2.9.0.jar"/>
+	<classpathentry kind="lib" path="lib/javax.persistence-api-2.2.jar"/>
+	<classpathentry kind="lib" path="lib/hibernate-entitymanager-4.3.8.Final.jar"/>
+	<classpathentry kind="lib" path="lib/hibernate-core-4.3.8.Final.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
